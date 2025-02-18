@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -37,6 +38,8 @@ public class PruebaEjercicio1 {
         alumnos.add(alumno4);
         alumnos.add(alumno5);
         alumnos.add(alumno6);
+
+        alumnos.addAll(Arrays.asList(alumno1, alumno2, alumno3, alumno4, alumno5, alumno6));
         
         return alumnos;
     }
@@ -61,12 +64,15 @@ public class PruebaEjercicio1 {
     }
 
     public void ejecutar(List<Alumnos> alumnos){
+        for (Alumnos alumno : alumnos) {
+            alumno.mostrarInformacion();
+        }
         preguntarAlumnos(alumnos);
         //separarPorAulas(alumnos);
         Map<String, List<Alumnos>> aulas = separarPorAulas(alumnos);
         dastosAlumnosPorAulas(aulas);
         aulaConMayorNotaMedia(aulas);
-        alumnosSuspensos(aulas);
+        alumnosSuspensos(alumnos);
     }
 
     // Mapsa
@@ -115,17 +121,12 @@ public class PruebaEjercicio1 {
         
     }
 
-    public void alumnosSuspensos(Map<String, List<Alumnos>> aulas) {
-        int nota = 5;
-        
-        for (Map.Entry<String, List<Alumnos>> entry : aulas.entrySet()) {
-            List<Alumnos> aulaAlumnos = entry.getValue();
-            for (Alumnos alumno : aulaAlumnos) {
-                if (alumno.getNotaMedia() < nota) {
+    public void alumnosSuspensos(List<Alumnos> alumnos) {
 
-                    System.out.print("\nAlumnos suspensos: ");
-
-                }
+        for (int i = 0; i < alumnos.size(); i++) {
+            if (alumnos.get(i).getNotaMedia() < 5) {
+                System.out.println("Alumnos borrados" + alumnos.remove(i));
+                i--;
             }
         }
         
