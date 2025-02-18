@@ -43,9 +43,23 @@ public class PruebaEjercicio1 {
         
         return alumnos;
     }
+
+    public void ejecutar(List<Alumnos> alumnos){
+        for (Alumnos alumno : alumnos) {
+            alumno.mostrarInformacion();
+        }
+        
+        preguntarAlumnos(alumnos);
+        //separarPorAulas(alumnos);
+        Map<String, List<Alumnos>> aulas = separarPorAulas(alumnos);
+        dastosAlumnosPorAulas(aulas);
+/*         aulaConMayorNotaMedia(aulas);
+        alumnosSuspensos(alumnos); */
+    }
     
     public void preguntarAlumnos(List<Alumnos> alumnos) {
-        int contador = 0;
+        double nota = 0;
+        boolean encontrado = false;
         String busquedaAlumno = Utilidades.pideDatoCadena("Ingresa el nombre del alumno");
 
         System.out.println("\nBuscando alumno: " + busquedaAlumno);
@@ -54,25 +68,20 @@ public class PruebaEjercicio1 {
             boolean coincidencia = busquedaAlumno.equalsIgnoreCase(alumno.getNombre());        
             
             if (coincidencia) {
-                contador++;
-                System.out.println("\nNúmero de coincidencias encontradas: " + contador);
-                System.out.println("Nota media de los alumnos con la coincidencia: " + busquedaAlumno);
-                System.out.println(alumno.getNotaMedia());
+                encontrado = true;
+
+                if (alumno.getNotaMedia() > nota) {
+                    nota = alumno.getNotaMedia();
+                } 
             } 
+
+        }
+
+        if (encontrado) {
+            System.out.println("Nota media de los alumnos con la coincidencia: " + busquedaAlumno);
+            System.out.println(nota);
         }
         
-    }
-
-    public void ejecutar(List<Alumnos> alumnos){
-        for (Alumnos alumno : alumnos) {
-            alumno.mostrarInformacion();
-        }
-        preguntarAlumnos(alumnos);
-        //separarPorAulas(alumnos);
-        Map<String, List<Alumnos>> aulas = separarPorAulas(alumnos);
-        dastosAlumnosPorAulas(aulas);
-        aulaConMayorNotaMedia(aulas);
-        alumnosSuspensos(alumnos);
     }
 
     // Mapsa
@@ -93,13 +102,12 @@ public class PruebaEjercicio1 {
 
     public void dastosAlumnosPorAulas(Map<String, List<Alumnos>> aulas){
                 
-        for (Map.Entry<String, List<Alumnos>> entry : aulas.entrySet()) {
-            System.out.println("\nAula: " + entry.getKey());
-            List<Alumnos> aulaAlumnos = entry.getValue();
-            for (Alumnos alumno : aulaAlumnos) {
-                System.out.println("- " + alumno.getNombre() + " " + alumno.getApellidos());
-            }
+        Set<String> claves = aulas.keySet();
+        for (String clave : claves) {
+            System.out.println(clave);
+            System.out.println(aulas.get(clave));
         }
+        
     }
 
     public void aulaConMayorNotaMedia(Map<String, List<Alumnos>> aulas) {

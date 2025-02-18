@@ -98,8 +98,8 @@ public class Alumnos {
 
     // Método que nos dice la información de cada alumno
     public void mostrarInformacion() {
-        System.out.println(toString());
-        System.out.println("==============");
+		System.out.println(toString());
+		System.out.println("==============");
     }
     
 }
