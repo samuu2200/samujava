@@ -2,9 +2,7 @@ package es.samujava.colecciones.ejercicio;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -25,24 +23,19 @@ public class PruebaEjercicio1 {
     public List<Alumnos> crearAlumnos() {
         List<Alumnos> alumnos = new ArrayList<>();
         
-        Alumnos alumno1 = new Alumnos("Samuel", "Quintero", 24, 9, "sam@");
+        Alumnos alumno1 = new Alumnos("Samuel", "Quintero", 24, 1, "sam@");
         Alumnos alumno2 = new Alumnos("José", "Gonzalez", 34, 2, "jose@");
         Alumnos alumno3 = new Alumnos("Samuel", "De La Mata", 38, 10, "alber@");
         Alumnos alumno4 = new Alumnos("María", "De los Angeles", 33, 3, "mar@");
         Alumnos alumno5 = new Alumnos("Liz", "Maribel", 30, 4, "liz@");
         Alumnos alumno6 = new Alumnos("Isis", "Daricell", 48, 7, "ijaa@");
 
-        alumnos.add(alumno1);
-        alumnos.add(alumno2);
-        alumnos.add(alumno3);
-        alumnos.add(alumno4);
-        alumnos.add(alumno5);
-        alumnos.add(alumno6);
-
         alumnos.addAll(Arrays.asList(alumno1, alumno2, alumno3, alumno4, alumno5, alumno6));
         
         return alumnos;
     }
+
+
 
     public void ejecutar(List<Alumnos> alumnos){
         for (Alumnos alumno : alumnos) {
@@ -50,11 +43,14 @@ public class PruebaEjercicio1 {
         }
         
         preguntarAlumnos(alumnos);
-        //separarPorAulas(alumnos);
+        separarPorAulas(alumnos);
         Map<String, List<Alumnos>> aulas = separarPorAulas(alumnos);
         dastosAlumnosPorAulas(aulas);
-/*         aulaConMayorNotaMedia(aulas);
-        alumnosSuspensos(alumnos); */
+        aulaConMayorNotaMedia(aulas);
+        alumnosSuspensos(alumnos);
+        for (Alumnos alumno : alumnos) {
+            alumno.mostrarInformacion();
+        }
     }
     
     public void preguntarAlumnos(List<Alumnos> alumnos) {
@@ -84,10 +80,10 @@ public class PruebaEjercicio1 {
         
     }
 
-    // Mapsa
+    // Mapas
     public Map<String, List<Alumnos>> separarPorAulas(List<Alumnos> alumnos) {
         // Creamos las aulas para separar a los alumnos
-        Map<String, List<Alumnos>> aulas = new HashMap<>();
+        Map<String, List<Alumnos>> aulas = new LinkedHashMap<>();
 
         List<Alumnos> alumnosAula1 = Arrays.asList(alumnos.get(0), alumnos.get(1));
         List<Alumnos> alumnosAula2 = Arrays.asList(alumnos.get(2), alumnos.get(3));
@@ -101,40 +97,48 @@ public class PruebaEjercicio1 {
     }
 
     public void dastosAlumnosPorAulas(Map<String, List<Alumnos>> aulas){
-                
+        System.out.println("\n*** Datos alumnos por aulas ***");
         Set<String> claves = aulas.keySet();
+
         for (String clave : claves) {
-            System.out.println(clave);
-            System.out.println(aulas.get(clave));
+            System.out.println(clave + ": ");
+            List<Alumnos> alumnos = aulas.get(clave);
+            for (Alumnos alumno : alumnos) {
+                System.out.println("-" + alumno.getNombre() + " " + alumno.getApellidos());
+            }
         }
         
     }
 
     public void aulaConMayorNotaMedia(Map<String, List<Alumnos>> aulas) {
+        System.out.println("\n*** Aula con mayor nota media ***");
         double nota = 0;
         String aula = "";
+        String nombreAlumno = "";
         
-        for (Map.Entry<String, List<Alumnos>> entry : aulas.entrySet()) {
-            List<Alumnos> aulaAlumnos = entry.getValue();
-            for (Alumnos alumno : aulaAlumnos) {
+        Set<String> claves = aulas.keySet();
+        for (String clave : claves) {
+            List<Alumnos> alumnosMayorNota = aulas.get(clave);
+            for (Alumnos alumno : alumnosMayorNota) {
                 if (alumno.getNotaMedia() > nota) {
                     nota = alumno.getNotaMedia();
-                    aula = entry.getKey();
+                    aula = clave;
+                    nombreAlumno = alumno.getNombre();
                 }
             }
         }
 
-        System.out.print("\nAula con mayor nota: ");
-        System.out.println(aula + " " + nota);
+        System.out.print("Aula con mayor nota: ");
+        System.out.println(aula + ":");
+        System.out.println("-" + nombreAlumno + " " + nota);
         
     }
 
     public void alumnosSuspensos(List<Alumnos> alumnos) {
-
+        System.out.println("\n*** Eliminar alumnos suspensos ***");
         for (int i = 0; i < alumnos.size(); i++) {
             if (alumnos.get(i).getNotaMedia() < 5) {
-                System.out.println("Alumnos borrados" + alumnos.remove(i));
-                i--;
+                alumnos.remove(i--);
             }
         }
         
