@@ -12,6 +12,18 @@ public class Colegio {
     private String direccion;
     private Map<String, List<Alumnos>> aulas;
 
+    // Constructor
+    public Colegio(String nombre, String direccion, Map<String, List<Alumnos>> aulas) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.aulas = aulas;
+    }
+
+    public Colegio(String nombre, String direccion) {
+        this.nombre = nombre;
+        this.direccion = direccion;   
+    }
+
     // Getters y Setters
     public String getNombre() {
         return nombre;
@@ -39,4 +51,5 @@ public class Colegio {
         sb.append("Dirección del colegio: ").append(direccion + "\n");
         return sb.toString();
     }
+
 }

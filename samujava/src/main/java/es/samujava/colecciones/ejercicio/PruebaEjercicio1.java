@@ -35,7 +35,7 @@ public class PruebaEjercicio1 {
         return alumnos;
     }
 
-
+    
 
     public void ejecutar(List<Alumnos> alumnos){
         for (Alumnos alumno : alumnos) {
