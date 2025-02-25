@@ -10,5 +10,19 @@ public class Utilidades {
         String cadena = scan.nextLine();
         return cadena;
     }
+
+    public static int pideDatoInt(String texto) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print(texto + ": ");
+        int numero = scan.nextInt();
+        return numero;
+    }
+
+    public static double pideDatoDouble(String texto) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print(texto + ": ");
+        double numero = scan.nextInt();
+        return numero;
+    }
     
 }

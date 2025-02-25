@@ -36,7 +36,6 @@ public class EjemploExcepciones {
         }
 
         System.out.println("Fin");
-        
     }
 
     // Propagar la excepción es poner el throws al método
