@@ -1,0 +1,59 @@
+Clase Boton
+	-color
+	-tamanio
+	-forma
+
+Clase Pantalon
+	-color
+	-precio
+	-talla
+	-Boton
+
+Clase Camisa
+	-color
+	-precio
+	-talla
+	-[]Boton
+
+Clase Vestido
+	-color
+	-precio
+	-talla
+
+Clase Maniqui
+	-id
+	-Pantalon
+	-Camisa
+	-Vestido
+	3 Constructores
+		+ vacio
+		+ (Pantalon, Camisa)
+		+ (Vestido)
+
+Clase Tienda
+	-nombre
+	-Constructor
+
+	-main()
+		Llamo a 
+		1)abrirTienda()
+		2)mostrarEscaparate()
+		3)cerrarTienda()
+		
+
+
+	- abrirTienda() --> Donde se van a generar todos los objetos
+		+3 Objetos de tipo Maniqui
+
+	- mostrarEscaparate() --> Mostrar la información de cada maniqui y el precio total de la ropa que llevan
+
+	- cerrarTienda() --> Desvestir a los maniquies
+
+
+
+
+
+
+
+		
+
