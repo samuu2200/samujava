@@ -27,5 +27,4 @@ public class Clientes {
         return sb.toString();
     }
     
-    // Métodos
 }

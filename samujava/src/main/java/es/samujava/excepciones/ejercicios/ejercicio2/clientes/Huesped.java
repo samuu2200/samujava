@@ -20,4 +20,11 @@ public class Huesped extends Clientes{
         this.dni = dni;
     }
 
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        super.toString();
+        sb.append("DNI cliente: ").append(dni);
+        return sb.toString();
+    }
+    
 }

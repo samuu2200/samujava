@@ -1,7 +1,6 @@
 package es.samujava.excepciones.ejercicios.ejercicio2.tazacafe;
 
 public class TazaCafe {
-
     // Atributos
     private String tipoCafe;
     private double temperatura;
@@ -10,6 +9,11 @@ public class TazaCafe {
     public TazaCafe(String tipoCafe, double temperatura) {
         this.tipoCafe = tipoCafe;
         this.temperatura = temperatura;
+    }
+
+    public TazaCafe(String tipoCafe) {
+        this.tipoCafe = tipoCafe;
+        this.temperatura = Math.random() * 100;
     }
     
     // Getters Setters
@@ -35,6 +39,8 @@ public class TazaCafe {
             throw new TooHotTemperatureException("La temperatura del café es muy caliente.");
         } else if (temperatura < 20) {
             throw new TooColdTemperatureException("La temperatura del café es muy fría.");
+        } else {
+            System.out.println("La temperatura del café es ideal");
         }
     }
 
