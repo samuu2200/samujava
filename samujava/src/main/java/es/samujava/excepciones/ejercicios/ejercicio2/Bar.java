@@ -1,10 +1,5 @@
 package es.samujava.excepciones.ejercicios.ejercicio2;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import es.samujava.excepciones.ejercicios.ejercicio2.clientes.ClienteAsiduo;
 import es.samujava.excepciones.ejercicios.ejercicio2.clientes.Clientes;
 import es.samujava.excepciones.ejercicios.ejercicio2.clientes.Comensal;

@@ -2,9 +2,6 @@ package es.samujava.excepciones.ejercicios.ejercicio2.clientes;
 
 import es.samujava.excepciones.ejercicios.ejercicio2.Cafeteable;
 import es.samujava.excepciones.ejercicios.ejercicio2.ClientesCafeteros;
-import es.samujava.excepciones.ejercicios.ejercicio2.tazacafe.TazaCafe;
-import es.samujava.excepciones.ejercicios.ejercicio2.tazacafe.TooColdTemperatureException;
-import es.samujava.excepciones.ejercicios.ejercicio2.tazacafe.TooHotTemperatureException;
 
 public class ClienteAsiduo extends ClientesCafeteros implements Cafeteable{
 
