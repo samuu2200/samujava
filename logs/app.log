@@ -1,1 +1,43 @@
 2025-02-27 18:19:28 [main] ERROR es.samujava.Main - Hello world!
+2025-03-03 17:34:30 [main] ERROR e.s.ficheros.EmpezandoConFicheros - Error al crear el fichero C:\Users\Tardes.GET-05.000\ficheross\fichero2.txt: El sistema no puede encontrar la ruta especificada
+java.io.IOException: El sistema no puede encontrar la ruta especificada
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(Native Method)
+	at java.base/java.io.File.createNewFile(File.java:1043)
+	at es.samujava.ficheros.EmpezandoConFicheros.main(EmpezandoConFicheros.java:57)
+2025-03-03 19:44:22 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado una nueva imagen: C:\Users\Tardes.GET-05.000\ficheros\imagenes\samu.jpg
+2025-03-03 19:44:39 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado un nuevo archivo: C:\Users\Tardes.GET-05.000\ficheros\documentos\holamundo.txt
+2025-03-03 19:45:16 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: C:\Users\Tardes.GET-05.000\ficheros\imagenes\samu.jpg
+2025-03-03 19:45:29 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado un nuevo archivo: C:\Users\Tardes.GET-05.000\ficheros\documentos\holamundo.txt
+2025-03-03 19:45:52 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado un nuevo elemento: C:\Users\Tardes.GET-05.000\ficheros\otros\hola
+2025-03-03 19:46:03 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: C:\Users\Tardes.GET-05.000\ficheros\imagenes\rickygay.jpg
+2025-03-03 19:46:09 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado un nuevo archivo: C:\Users\Tardes.GET-05.000\ficheros\documentos\david.txt
+2025-03-03 20:02:42 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: samu.jpg
+2025-03-03 20:02:42 [main] ERROR e.samujava.ficheros.CrearDirectorios - -No se ha podido crear el fichero correctamente: 
+2025-03-03 20:06:57 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: samu.jpg
+2025-03-03 20:06:57 [main] ERROR e.samujava.ficheros.CrearDirectorios - -No se ha podido crear el fichero correctamente: 
+2025-03-03 20:12:32 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: samu.jpg
+2025-03-03 20:12:32 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\samu.jpg
+2025-03-03 20:20:06 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: samu.jpg
+2025-03-03 20:20:06 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\samu.jpg
+2025-03-03 20:20:13 [main] INFO  e.samujava.ficheros.CrearDirectorios - 
+-Se ha creado una nueva imagen: monse.png
+2025-03-03 20:20:13 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\monse.png
+2025-03-03 20:21:07 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\samu.jpg
+2025-03-03 20:21:14 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\profe.png
+2025-03-03 20:21:18 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\documentos\holamundo.txt
+2025-03-03 20:21:37 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\fichero1
+2025-03-03 20:21:41 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\fichero2
+2025-03-03 20:40:25 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\juego.gif
+2025-03-03 20:40:38 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\documentos\juegos.txt
+2025-03-03 20:40:42 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\arrays
+2025-03-03 20:40:49 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\excepciones
+2025-03-03 20:41:01 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\for
