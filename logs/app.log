@@ -41,3 +41,45 @@ java.io.IOException: El sistema no puede encontrar la ruta especificada
 2025-03-03 20:40:42 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\arrays
 2025-03-03 20:40:49 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\excepciones
 2025-03-03 20:41:01 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\for
+2025-03-05 16:16:04 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\duban.png
+2025-03-05 16:35:02 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\loggers
+2025-03-05 16:35:16 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\otros\ilovelogs
+2025-03-05 16:35:29 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\imagenes\java.png
+2025-03-05 16:35:41 [main] INFO  e.samujava.ficheros.CrearDirectorios - -Se ha creado con exito: C:\Users\Tardes.GET-05.000\ficheros\documentos\xxx.txt
+2025-03-05 17:19:33 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros existe
+2025-03-05 17:19:33 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos se ha creado
+2025-03-05 17:19:33 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes se ha creado
+2025-03-05 17:19:33 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros se ha creado
+2025-03-05 17:26:48 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros existe
+2025-03-05 17:26:48 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos no ha creado
+2025-03-05 17:26:48 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes no ha creado
+2025-03-05 17:26:48 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros no ha creado
+2025-03-05 17:26:55 [main] INFO  e.samujava.ficheros.CrearDirectorios - La extensión del fichero getafe.png es .png
+2025-03-05 17:27:30 [main] INFO  e.samujava.ficheros.CrearDirectorios - La extensión del fichero fichero.getafe.jpg es .jpg
+2025-03-05 17:36:11 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\ existe
+2025-03-05 17:36:11 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos se ha creado
+2025-03-05 17:36:11 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes se ha creado
+2025-03-05 17:36:11 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros se ha creado
+2025-03-05 17:36:28 [main] INFO  e.samujava.ficheros.CrearDirectorios - La extensión del fichero fichero1.getafe.txt es .txt
+2025-03-05 17:56:37 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\ existe
+2025-03-05 17:56:37 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos no ha creado
+2025-03-05 17:56:37 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes no ha creado
+2025-03-05 17:56:37 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros no ha creado
+2025-03-05 17:56:51 [main] INFO  e.samujava.ficheros.CrearDirectorios - La extensión del fichero getafe.pdf es .pdf
+2025-03-05 17:56:51 [main] INFO  e.samujava.ficheros.CrearDirectorios - Fichero C:\Users\Tardes.GET-05.000\ficheros\otros\getafe.pdf se ha creado correctamente
+2025-03-05 18:11:00 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\ existe
+2025-03-05 18:11:00 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos no ha creado
+2025-03-05 18:11:00 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes no ha creado
+2025-03-05 18:11:00 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros no ha creado
+2025-03-05 18:12:33 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\ existe
+2025-03-05 18:12:33 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos no ha creado
+2025-03-05 18:12:33 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes no ha creado
+2025-03-05 18:12:33 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros no ha creado
+2025-03-05 18:12:39 [main] INFO  e.samujava.ficheros.CrearDirectorios - La extensión del fichero hola.pdf es .pdf
+2025-03-05 18:12:39 [main] INFO  e.samujava.ficheros.CrearDirectorios - Fichero C:\Users\Tardes.GET-05.000\ficheros\otros\hola.pdf se ha creado correctamente
+2025-03-05 18:13:52 [main] INFO  e.samujava.ficheros.CrearDirectorios - La extensión del fichero queremos.pdf es .pdf
+2025-03-05 18:13:52 [main] INFO  e.samujava.ficheros.CrearDirectorios - Fichero C:\Users\Tardes.GET-05.000\ficheros\otros\queremos.pdf se ha creado correctamente
+2025-03-05 18:19:53 [main] INFO  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\ existe
+2025-03-05 18:19:53 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos no ha creado
+2025-03-05 18:19:53 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes no ha creado
+2025-03-05 18:19:53 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros no ha creado

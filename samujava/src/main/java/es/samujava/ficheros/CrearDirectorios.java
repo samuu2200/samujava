@@ -7,59 +7,74 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.samujava.pruebas.utilidades.Utilidades;
+import es.samujava.utils.UtilidadesFicheros;
 
 public class CrearDirectorios {
 
     private static final Logger logger = LoggerFactory.getLogger(CrearDirectorios.class);
+    private static final String DIR_DOCUMENTOS = "documentos";
+    private static final String DIR_IMAGENES = "imagenes";
+    private static final String DIR_OTROS = "otros";
 
     public static void main(String[] args) {
         // Constructor con el directorio local
-        final File DIRECTORIO_LOCAL = new File("C:\\Users\\Tardes.GET-05.000\\ficheros");
+        String dirOrigen = "C:\\Users\\Tardes.GET-05.000\\ficheros\\";
+        final File DIRECTORIO_LOCAL = new File(dirOrigen);
 
-        // Constructor donde le pasamos el directorio y el nombre del directorio
-        // Directorio imagenes
-        File directorioImagenes = new File(DIRECTORIO_LOCAL, "\\imagenes");
-        directorioImagenes.mkdir();
+        if (DIRECTORIO_LOCAL.exists()) {
+            logger.info("El directorio " + dirOrigen + " existe");
 
-        // Directorio documentos
-        File directorioDocumentos = new File(DIRECTORIO_LOCAL, "\\documentos");
-        directorioDocumentos.mkdir();
+            String[] directorios = { DIR_DOCUMENTOS, DIR_IMAGENES, DIR_OTROS };
+            UtilidadesFicheros.crearDirectorios(DIRECTORIO_LOCAL, directorios);
 
-        // Directorio otros
-        File directorioOtros = new File(DIRECTORIO_LOCAL, "\\otros");
-        directorioOtros.mkdir();
+        }
 
-        // Vamos a preguntar por 5 nombres de ficheros
         for (int i = 0; i < 5; i++) {
-            String nombresFicheros = Utilidades.pideDatoCadena("¿Qué archivo quieres crear?");
-            // Si el archivo tiene la extención de una imagen la metemos en la carpeta
-            // "imagenes"
-            boolean extencionImg = nombresFicheros.endsWith(".jpg") || nombresFicheros.endsWith(".png")
-                    || nombresFicheros.endsWith(".gif");
-            boolean extencionTxt = nombresFicheros.endsWith(".txt");
-            File nuevoFichero;
+            String nombreFichero = Utilidades.pideDatoCadena("Introduce nombre del fichero " + (i + 1));
 
-            if (extencionImg) {
-                nuevoFichero = new File(directorioImagenes, nombresFicheros);
-            } else if (extencionTxt) {
-                nuevoFichero = new File(directorioDocumentos, nombresFicheros);
+            String extensionFichero = nombreFichero.substring(nombreFichero.lastIndexOf("."));
+            logger.info("La extensión del fichero " + nombreFichero + " es " +
+                    extensionFichero);
+
+            String directorioDestinos;
+
+            if (extensionFichero.equals(".txt")) {
+                directorioDestinos = dirOrigen + DIR_DOCUMENTOS;
+            } else if (extensionFichero.equals(".jpg") ||
+                    extensionFichero.equals(".png")) {
+                directorioDestinos = dirOrigen + DIR_IMAGENES;
             } else {
-                nuevoFichero = new File(directorioOtros, nombresFicheros);
+                directorioDestinos = dirOrigen + DIR_OTROS;
             }
 
+            File ficheroDocumento = new File(directorioDestinos, nombreFichero);
             try {
-                if (nuevoFichero.createNewFile()) {
-                    logger.info("-Se ha creado con exito: " + nuevoFichero.getAbsolutePath());
-                } else {
-                    logger.info("-El directorio ya existe.");
-                }
+                ficheroDocumento.createNewFile();
+                logger.info("Fichero " + ficheroDocumento + " se ha creado correctamente");
             } catch (IOException e) {
-                logger.error("-No se ha podido crear el fichero correctamente: ", e.getMessage());
+                logger.error("No se ha creado el fichero ", e.getMessage());
             }
         }
 
-        // Renombramos todos los ficheros que están dentro de "otros"
-        System.out.println("*** Renombrar los archivos que estén en 'otros' ***");
+        // Renombrar los archivos que estén en otros
+        File dirOtros = new File(dirOrigen + DIR_OTROS);
+        File[] ficherosOtros = dirOtros.listFiles();
+        int contador = 0;
+        for (File fichero : ficherosOtros) {
+            String extensionFichero = "";
+            if (fichero.isFile()) {
+                if (fichero.getName().contains(".")) {
+                    extensionFichero = fichero.getName().substring(fichero.getName().lastIndexOf("."));
+                } else {
+                    extensionFichero = ".xml";
+                }
+
+                String nuevoNombre = "Samuel" + contador + extensionFichero;
+                File fileRename = new File(dirOtros, nuevoNombre);
+                fichero.renameTo(fileRename);
+                contador++;
+            }
+        }
 
     }
 
