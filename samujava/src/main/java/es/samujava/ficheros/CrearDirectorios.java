@@ -63,6 +63,7 @@ public class CrearDirectorios {
         for (File fichero : ficherosOtros) {
             String extensionFichero = "";
             if (fichero.isFile()) {
+                // Si el fichero no teremina con punto, pues que lo coja
                 if (fichero.getName().contains(".")) {
                     extensionFichero = fichero.getName().substring(fichero.getName().lastIndexOf("."));
                 } else {
