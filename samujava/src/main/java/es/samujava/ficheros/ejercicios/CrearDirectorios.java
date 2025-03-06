@@ -1,4 +1,4 @@
-package es.samujava.ficheros;
+package es.samujava.ficheros.ejercicios;
 
 import java.io.File;
 import java.io.IOException;

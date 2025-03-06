@@ -7,7 +7,7 @@ import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.samujava.ficheros.CrearDirectorios;
+import es.samujava.ficheros.ejercicios.CrearDirectorios;
 
 public class UtilidadesFicheros {
     private static final Logger logger = LoggerFactory.getLogger(CrearDirectorios.class);
