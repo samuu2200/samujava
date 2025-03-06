@@ -17,9 +17,9 @@ public class ArchivoServicio {
 
 	public void crearArchivo(String nombre) {
 		File archivo = new File(nombre);
-		try (BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, false))) {
+		try (BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, true))) {
 
-			buffer.append("Hola que tal amigos!\n")
+			buffer.append("Hola que tal amigosssssssssssssssssssssssss!\n")
 					.append("Todo bien? yo escribiendo en un archivo...\n")
 					.append("Hasta luego Lucas!\n");
 			// buffer.close();
@@ -37,7 +37,14 @@ public class ArchivoServicio {
 
 			buffer.println("Hola que tal amigos!");
 			buffer.println("Todo bien? yo acá escribiendo un archivo...");
-			buffer.printf("Hasta luego %s! %s", "JoseLuis5", "Cadena");
+			buffer.printf("Hasta luego %s! %s", "SamuelQuint", "Hola Mundo");
+			buffer.printf("""
+					%nMejor alumno que tienes José Luis!
+					-------------------------------------
+					Nombre: %s
+					Apellido: %s
+					edad: %d
+					""", "Samuel", "Quintero", 24);
 			// buffer.close();
 			System.out.println("El archivo se ha creado con éxito!");
 		} catch (IOException e) {

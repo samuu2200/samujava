@@ -1,0 +1,8 @@
+Hola que tal amigos!
+Todo bien? yo acá escribiendo un archivo...
+Hasta luego SamuelQuint! Hola Mundo
+Mejor alumno que tienes José Luis!
+-------------------------------------
+Nombre: Samuel
+Apellido: Quintero
+edad: 24
