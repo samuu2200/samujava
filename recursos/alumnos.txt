@@ -1,0 +1,14 @@
+
+Información Alumnos: 
+
+Alumnos: Samuel
+---------------------
+	Nombre: Samuel | Apellido: Quintero | Edad: 24 | Email: saquin@ | Asignaturas: [a, b],
+
+Alumnos: Alex
+---------------------
+	Nombre: Alex | Apellido: Morales | Edad: 24 | Email: ale@ | Asignaturas: [a, b],
+
+Alumnos: Mariangel
+---------------------
+	Nombre: Mariangel | Apellido: Gonzalez | Edad: 22 | Email: mg@ | Asignaturas: [a, b],

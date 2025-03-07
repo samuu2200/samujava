@@ -83,3 +83,8 @@ java.io.IOException: El sistema no puede encontrar la ruta especificada
 2025-03-05 18:19:53 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\documentos no ha creado
 2025-03-05 18:19:53 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\imagenes no ha creado
 2025-03-05 18:19:53 [main] WARN  e.samujava.ficheros.CrearDirectorios - El directorio C:\Users\Tardes.GET-05.000\ficheros\otros no ha creado
+2025-03-06 20:04:49 [main] ERROR e.s.ficheros.ejercicios.Ejercicio2 - Ha habido un error al crear el archivo
+2025-03-06 20:11:02 [main] ERROR e.s.ficheros.ejercicios.Ejercicio2 - Ha habido un error al crear el archivo
+2025-03-06 20:11:49 [main] ERROR e.s.ficheros.ejercicios.Ejercicio2 - Ha habido un error al crear el archivo
+2025-03-06 20:12:34 [main] INFO  e.s.ficheros.ejercicios.Ejercicio2 - Se ha creado correctamente
+2025-03-06 20:15:46 [main] INFO  e.s.ficheros.ejercicios.Ejercicio2 - Se ha creado correctamente
