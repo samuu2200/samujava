@@ -1,4 +1,4 @@
-package es.cursojava.ficheros.ejercicios;
+package es.samujava.ficheros.ejercicios;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,38 +9,38 @@ import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
 
-import es.cursojava.poo.ejercicios.alumnos.Alumno;
-import es.cursojava.utils.UtilidadesFicheros;
+import es.samujava.pruebas.alumnos.Alumnos;
+import es.samujava.utils.UtilidadesFicheros;
 
 public class Ejercicio3Ficcheros {
     public static void main(String[] args) {
         String[] asignaturas = {"A1","A2","A3"};
-        Alumno a1 = new Alumno("N1", "A1", 22, 8, "asdas@asdsad.es", asignaturas);
-        Alumno a2 = new Alumno("N2", "A2", 23, 6, "zxczx@asdsad.es", asignaturas);
-        Alumno a3 = new Alumno("N3", "A3", 24, 9, "qweqw@asdsad.es", asignaturas);
+        Alumnos a1 = new Alumnos("N1", "A1", 22, 8, "asdas@asdsad.es", asignaturas);
+        Alumnos a2 = new Alumnos("N2", "A2", 23, 6, "zxczx@asdsad.es", asignaturas);
+        Alumnos a3 = new Alumnos("N3", "A3", 24, 9, "qweqw@asdsad.es", asignaturas);
 
 
-        List<Alumno> alumnos = Arrays.asList(a1,a2,a3);
+        List<Alumnos> Alumnoss = Arrays.asList(a1,a2,a3);
         Ejercicio3Ficcheros e3 = new Ejercicio3Ficcheros();
-        e3.almacenarAlumnosFichero(alumnos);
+        e3.almacenarAlumnossFichero(Alumnoss);
     }
 
-    public void almacenarAlumnosFichero (List<Alumno> alumnos){
+    public void almacenarAlumnossFichero (List<Alumnos> Alumnoss){
 
-        Path ruta = Paths.get("./recursos/datos_alumnos.txt");
+        Path ruta = Paths.get("./recursos/datos_Alumnoss.txt");
 		
         try {
 
-            for (Alumno alumno : alumnos) {
+            for (Alumnos Alumnos : Alumnoss) {
                 StringBuilder sb = new StringBuilder();
-                sb.append(alumno.getNombre());
+                sb.append(Alumnos.getNombre());
                 sb.append(UtilidadesFicheros.SEPARADOR_PIPE);
-                sb.append(alumno.getEdad());
+                sb.append(Alumnos.getEdad());
                 sb.append(UtilidadesFicheros.SEPARADOR_PIPE);
-                sb.append(Arrays.toString(alumno.getAsignaturas()));
+                sb.append(Arrays.toString(Alumnos.getAsignaturas()));
 
-                // String contenido = ""+alumno.getNombre()+"|"+alumno.getApellidos()+
-                //         "|"+alumno.getEdad() +"|" + Arrays.toString(alumno.getAsignaturas()) +"\n";
+                // String contenido = ""+Alumnos.getNombre()+"|"+Alumnos.getApellidos()+
+                //         "|"+Alumnos.getEdad() +"|" + Arrays.toString(Alumnos.getAsignaturas()) +"\n";
                 String contenido = sb.toString();
                 contenido = contenido.replace("[", "")
                             .replace("]", "");
@@ -51,7 +51,7 @@ public class Ejercicio3Ficcheros {
 
                 //N1|24|A1,A2,A3
                 // String asignaturas = "";
-                // for (String asignatura : alumno.getAsignaturas()) {
+                // for (String asignatura : Alumnos.getAsignaturas()) {
                 //     asignaturas+=asignatura+",";
                 // }
                 //contenido+= asignaturas;
