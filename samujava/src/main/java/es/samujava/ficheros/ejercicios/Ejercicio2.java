@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import es.samujava.pruebas.alumnos.Alumnos;
 import es.samujava.pruebas.utilidades.Utilidades;
+import es.samujava.utils.UtilidadesFicheros;
 
 public class Ejercicio2 {
     private static final Logger logger = LoggerFactory.getLogger(Ejercicio2.class);
@@ -58,14 +59,26 @@ public class Ejercicio2 {
             logger.info("Se ha creado correctamente");
             buffer.println("\nInformación Alumnos: ");
             for (Alumnos alumnos : listadoAlumnos) {
-                buffer.printf("""
+                /* buffer.printf("""
                         %nAlumno: %s
                         ---------------------
                         \tNombre: %s | Apellido: %s | Edad: %d | Email: %s | Asignaturas: %s
                         """,alumnos.getNombre(), alumnos.getNombre(), alumnos.getApellidos(), alumnos.getEdad(), alumnos.getEmail(),
-                        Arrays.toString(alumnos.getAsignaturas()));
+                        Arrays.toString(alumnos.getAsignaturas())); */
+
+
+                StringBuilder sb = new StringBuilder();
+                sb.append("Nombre: ").append(alumnos.getNombre()).append(UtilidadesFicheros.SEPARADOR_PIPE);
+                sb.append("Apellido: ").append(alumnos.getApellidos()).append(UtilidadesFicheros.SEPARADOR_PIPE);
+                sb.append("Edad: ").append(alumnos.getEdad()).append(UtilidadesFicheros.SEPARADOR_PIPE);
+                sb.append("Email: ").append(alumnos.getEmail()).append(UtilidadesFicheros.SEPARADOR_PIPE);
+                sb.append("Asignaturas: ").append(alumnos.getAsignaturas().toString()).append(UtilidadesFicheros.SEPARADOR_PIPE);
+                String contenido = sb.toString();
+                contenido = contenido.replace("[", "").replace("]", ""); 
+
 
             }
+
             // buffer.close();
         } catch (IOException e) {
             e.printStackTrace();

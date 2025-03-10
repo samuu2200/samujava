@@ -11,6 +11,8 @@ import es.samujava.ficheros.ejercicios.CrearDirectorios;
 
 public class UtilidadesFicheros {
     private static final Logger logger = LoggerFactory.getLogger(CrearDirectorios.class);
+    public static final String SEPARADOR_PIPE = "|";
+    
     
     /**
      * Método que nos permite crear ficheros pasando ficheros de tipo File y un arrays de Strings
