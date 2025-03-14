@@ -106,10 +106,11 @@ public class ArchivoServicio {
 //			sb.append(linea).append("\n");
 //		}
 
+
         try (BufferedReader reader = new BufferedReader(new FileReader(archivo))){
 
             String linea;
-            while ( (linea = reader.readLine()) != null){
+            while ( (linea = reader.readLine()) != null){     
                 sb.append(linea).append("\n");
             }
         } catch (IOException e) {
