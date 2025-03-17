@@ -1,9 +1,8 @@
-package es.cursojava.ficheros.ejercicios.pojos;
+package es.cursojava.ficheros.pojos;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class Eventos {
-
+public class Evento {
     private int id;
     private String nombre;
     private Date fecha;
@@ -12,10 +11,10 @@ public class Eventos {
     private int duracion;
     private double precio;
     private String organizador;
-    private boolean esGratuito;
-    
-    public Eventos(int id, String nombre, Date fecha, String lugar, String descripcion, int duracion, double precio,
-            String organizador, boolean esGratuito) {
+    private boolean gratuito;
+
+    public Evento(int id, String nombre, Date fecha, String lugar, String descripcion, int duracion, double precio,
+            String organizador, boolean gratuito) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
@@ -24,7 +23,7 @@ public class Eventos {
         this.duracion = duracion;
         this.precio = precio;
         this.organizador = organizador;
-        this.esGratuito = esGratuito;
+        this.gratuito = gratuito;
     }
 
     public int getId() {
@@ -91,21 +90,22 @@ public class Eventos {
         this.organizador = organizador;
     }
 
-    public boolean isEsGratuito() {
-        return esGratuito;
+    public boolean isGratuito() {
+        return gratuito;
     }
 
-    public void setEsGratuito(boolean esGratuito) {
-        this.esGratuito = esGratuito;
+    public void setGratuito(boolean gratuito) {
+        this.gratuito = gratuito;
     }
 
     @Override
     public String toString() {
-        return "Eventos [id=" + id + ", nombre=" + nombre + ", fecha=" + fecha + ", lugar=" + lugar + ", descripcion="
+        return "Evento [id=" + id + ", nombre=" + nombre + ", fecha=" + fecha + ", lugar=" + lugar + ", descripcion="
                 + descripcion + ", duracion=" + duracion + ", precio=" + precio + ", organizador=" + organizador
-                + ", esGratuito=" + esGratuito + "]";
+                + ", gratuito=" + gratuito + "]";
     }
 
-
     
+    
+
 }
