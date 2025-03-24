@@ -88,3 +88,58 @@ java.io.IOException: El sistema no puede encontrar la ruta especificada
 2025-03-06 20:11:49 [main] ERROR e.s.ficheros.ejercicios.Ejercicio2 - Ha habido un error al crear el archivo
 2025-03-06 20:12:34 [main] INFO  e.s.ficheros.ejercicios.Ejercicio2 - Se ha creado correctamente
 2025-03-06 20:15:46 [main] INFO  e.s.ficheros.ejercicios.Ejercicio2 - Se ha creado correctamente
+2025-03-19 18:04:19 [main] INFO  e.s.bbdd.ejercicios.MainEmpleados - ID: 1
+Nombre Empleado: Juan Perez
+Edad empleado: 31
+Salario del empleado: 4200.0
+ID departamento: 1
+Fecha de contratación: 2025-01-04
+
+2025-03-19 18:04:19 [main] INFO  e.s.bbdd.ejercicios.MainEmpleados - ID: 2
+Nombre Empleado: Samuel Quintero
+Edad empleado: 24
+Salario del empleado: 5000.0
+ID departamento: 2
+Fecha de contratación: 2025-02-04
+
+2025-03-19 18:04:19 [main] INFO  e.s.bbdd.ejercicios.MainEmpleados - ID: 3
+Nombre Empleado: Carlos Gomez
+Edad empleado: 46
+Salario del empleado: 5250.0
+ID departamento: 1
+Fecha de contratación: 2024-03-04
+
+2025-03-19 18:04:19 [main] INFO  e.s.bbdd.ejercicios.MainEmpleados - ID: 6
+Nombre Empleado: David Romero
+Edad empleado: 33
+Salario del empleado: 17000.0
+ID departamento: 3
+Fecha de contratación: 2025-03-04
+
+2025-03-19 18:04:19 [main] INFO  e.s.bbdd.ejercicios.MainEmpleados - ID: 8
+Nombre Empleado: Salvador Morales
+Edad empleado: 33
+Salario del empleado: 9000.0
+ID departamento: 4
+Fecha de contratación: 2010-03-04
+
+2025-03-19 18:04:19 [main] INFO  e.s.bbdd.ejercicios.MainEmpleados - ID: 9
+Nombre Empleado: Santiago Díaz
+Edad empleado: 33
+Salario del empleado: 8000.0
+ID departamento: 4
+Fecha de contratación: 2023-03-04
+
+2025-03-19 19:19:36 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:19:36 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:25:02 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:25:02 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:25:17 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:25:17 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:29:58 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-19 19:29:58 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-24 18:04:45 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-24 18:04:45 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-24 18:08:58 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-24 19:45:47 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 
+2025-03-24 19:45:47 [main] ERROR e.s.utils.UtilidadesBaseDeDatos - Error en la consulta: 

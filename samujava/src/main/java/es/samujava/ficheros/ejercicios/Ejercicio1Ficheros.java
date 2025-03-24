@@ -23,31 +23,6 @@ public class Ejercicio1Ficheros {
             UtilidadesFicheros.crearDirectorios(dirFicheros, directorios);
         }
 
-
-        // for (int i = 0; i < 5; i++) {
-        //     String nombreFichero = Utilidades.pideDatoCadena("Introduce nombre del fichero "+ (i+1));
-        //     String extensionFichero = nombreFichero.substring(nombreFichero.lastIndexOf("."));
-        //     logger.info("La extension del fichero "+ nombreFichero +" es " +extensionFichero);
-        //     String directorioDestino = "";
-        //     if (extensionFichero.equals(".txt")){
-        //         directorioDestino = dirOrigen+DIR_DOCUMENTOS;
-        //     }
-        //     else if (extensionFichero.equals(".jpg") || extensionFichero.equals(".png")){
-        //         directorioDestino = dirOrigen+DIR_IMAGENES;
-        //     }else{
-        //         directorioDestino = dirOrigen+DIR_OTROS;
-        //     }
-
-        //     File ficheroDocumento = new File(directorioDestino, nombreFichero);
-        //     try {
-        //         ficheroDocumento.createNewFile();
-        //         logger.info("Fichero "+ ficheroDocumento +" creado correctamente");
-        //     } catch (IOException e) {
-        //         logger.error("Fichero "+ ficheroDocumento +" no creado por "+e.getMessage());
-        //     }
-        // }
-
-
         File dirOtros = new File(dirOrigen+DIR_OTROS);
         File[] ficherosOtros = dirOtros.listFiles();
         int contador = 0;
