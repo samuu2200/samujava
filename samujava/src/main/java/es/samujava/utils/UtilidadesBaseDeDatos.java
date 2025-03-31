@@ -1,8 +1,10 @@
 package es.samujava.utils;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.samujava.bbdd.ejercicios.Empleados;
-import es.samujava.ficheros.ejercicios.pojos.Eventos;
 
 public class UtilidadesBaseDeDatos {
 	private static final String URL_BD_ORACLE = "jdbc:oracle:thin:samuu/password@localhost:1522:XE";
@@ -53,14 +54,6 @@ public class UtilidadesBaseDeDatos {
 		return conex;
 	}
 
-	public static void cierraConexion(Connection conex) {
-		try {
-			conex.close();
-		} catch (SQLException e) {
-			error = "Ha habido un error al cerrar la conexión: " + e.getMessage();
-		}
-	}
-
 	public static Map<String, List<Empleados>> consultaEquipos(String consulta, Connection conex) {
 		Map<String, List<Empleados>> mapa = new HashMap<>();
 		List<Empleados> listadoEmpleados = new ArrayList<>();
@@ -87,7 +80,6 @@ public class UtilidadesBaseDeDatos {
 				} else
 					mapa.get(nombreEquipo).add(empleado);
 			}
-
 
 			st.close();
 			rs.close();
@@ -188,6 +180,70 @@ public class UtilidadesBaseDeDatos {
 		}
 
 		return listaEmpleados;
+	}
+
+	public static void cierraConexion(Connection conex) {
+		try {
+			conex.close();
+		} catch (SQLException e) {
+			error = "Ha habido un error al cerrar la conexión: " + e.getMessage();
+		}
+	}
+
+	public static void testTransaction() {
+		int contador = 100_000;
+		java.util.Date fecha = new java.util.Date();
+		Connection conex = creaConexion();
+		PreparedStatement ps = null;
+		try {
+			conex.setAutoCommit(false);
+			String insert = "INSERT INTO EMPLEADOS VALUES (?,?,?,?,?,?,?)";
+			String delete = "DELETE FROM EMPLEADOS";
+			ps = conex.prepareStatement(delete);
+			int totalBorrados = ps.executeUpdate();
+			System.out.println("Registros eliminados: " + totalBorrados);
+			ps.close();
+
+			for (int i = 10; i < 30000; i++) {
+				ps.setInt(1, i);
+				ps.setString(2, "Nombre" + i);
+				ps.setInt(3,(int)Math.random() * 100);
+				ps.setDouble(4, Math.random() * 10000);
+				ps.setDouble(5, 2);
+				ps.setDate(6, null);
+				ps.setInt(7, 1);
+				
+				ps.executeQuery();
+				if (i % contador == 0) {
+					java.util.Date fecha2 = new java.util.Date();
+					long tiempoFinal = fecha2.getTime() - fecha.getTime();
+					System.out.println("Tiempo transcurrido en el for = " + tiempoFinal);
+					Thread.sleep(2000);
+				}
+
+				if (i == 999999) {
+					throw new SQLException("Porque sí");
+				}
+				ps.close();
+			}
+			conex.commit();
+		} catch (Exception e) {
+			System.out.println("Error" + e.getMessage());
+			try {
+				conex.rollback();
+			} catch (SQLException sql) {
+				sql.printStackTrace();
+			}
+		} finally {
+			System.out.println("Cerramos conexiones");
+			try {
+				conex.close();
+				ps.close();
+			} catch (SQLException e) {			
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 }
