@@ -34,8 +34,13 @@ public class Persona {
 
     // Constructores
     public Persona() {}
-    public Persona(String nombre, int edad) {
+    public Persona(String nombre,    int edad) {
         this.nombre = nombre;
+        this.edad = edad;
+    }
+    public Persona(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
         this.edad = edad;
     }
 
@@ -64,6 +69,7 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
     public String getEstadoCivil() {
         return estadoCivil;
     }
@@ -74,6 +80,7 @@ public class Persona {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Id: ").append(id).append("\n");
         sb.append("Nombre: ").append(nombre).append("\n");
         sb.append("Edad: ").append(edad).append("\n");
         

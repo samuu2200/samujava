@@ -20,9 +20,18 @@ public class HibernateMain {
             
             Persona p1 = new Persona("Ana", 25);
             Persona p2 = new Persona("Luis", 30);
+            Persona p3 = new Persona("Ana2", 25);
+            Persona p4 = new Persona("Juan", "Lopez", 25);
+            Persona p5 = new Persona("Gabo", "Quintero", 25);
+            Persona p6 = new Persona("Joaco", "Montserrat", 25);
+
     
             session.persist(p1);
             session.persist(p2);
+            session.persist(p3);
+            session.persist(p4);
+            session.persist(p5);
+            session.persist(p6);
     
             tx.commit();
 

@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "TB_PERSONAS")
@@ -16,15 +17,18 @@ public class Persona {
     // IDENTITY:	Usa una columna auto-incremental. Funciona bien con MySQL, SQL Server, Oracle 12c+…
     // SEQUENCE:	 Usa una secuencia de base de datos (muy común en Oracle, PostgreSQL, etc.).
     // TABLE: Usa una tabla especial para almacenar y generar identificadores.
-    private long id;
+    private Long id;
 
-    @Column(name = "nombre")
+    @Column(name = "nombre", nullable=false, length = 20, unique = true)
     private String nombre;
 
     @Column(name = "edad")
     private int edad;
 
     private String apellidos;
+
+    @Transient
+    private String estadoCivil;
 
     // Constructores
     public Persona() {}
@@ -50,9 +54,16 @@ public class Persona {
         this.apellidos = apellidos;
     }
 
+    public String getEstadoCivil() {
+        return estadoCivil;
+    }
+    public void setEstadoCivil(String estadoCivil) {
+        this.estadoCivil = estadoCivil;
+    }
 
     @Override
     public String toString() {
         return "Persona{id=" + id + ", nombre='" + nombre + "', edad=" + edad + "}";
     }
+    
 }

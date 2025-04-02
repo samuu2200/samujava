@@ -1,41 +1,41 @@
 package es.samujava.hibernate;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import es.samujava.hibernate.entities.CaballoCarrera;
+import es.samujava.utils.HibernateUtil;
 
 public class HibernateCarreraCaballosMain {
     public static void main(String[] args) {
+        Session session = HibernateUtil.getSession();
+        Transaction tx = null;
+        // CaballoCarrera c11 = new CaballoCarrera("Liz", 100, 30.0, 8, 5, true);
+        CaballoCarrera c14 = new CaballoCarrera("Longeva mucho", 350, 30.0, 8, 5, true);
+        CaballoCarrera c15 = new CaballoCarrera("Hola", 100, 30.0, 8, 5, true);
+        CaballoCarrera c16 = new CaballoCarrera("caballo", 4, 30.0, 8, 5, true);
+        CaballoCarrera c17 = new CaballoCarrera("mucho", 20, 30.0, 8, 5, true);
+        List<CaballoCarrera> caballos = Arrays.asList(c14, c15, c16, c17);
 
-        try {
-            SessionFactory sessionFactory = new Configuration()
-                    .configure() // Carga hibernate.cfg.xml
-                    .buildSessionFactory();
-            Session session = sessionFactory.openSession();
-            Transaction tx = session.beginTransaction();
-            System.out.println(session);
+        // Obtenemos una session en hibernate
+        for (CaballoCarrera caballoCarrera : caballos) {
+            // Comenzamos una transacción
+            tx = session.beginTransaction();
+            try {
+                System.out.println("Insertando caballos " + caballoCarrera.getNombre());
+                session.persist(caballoCarrera);
+                tx.commit();
+            } catch (Exception e) {
+                System.out.println("Ha habido un error: " + e);
+            }
 
-            CaballoCarrera c1 = new CaballoCarrera(25, "Spirit", 15, 70.0, 5, 5, true);
-            CaballoCarrera c2 = new CaballoCarrera(25, "Ricky", 5, 20.0, 2, 5, true);
-            CaballoCarrera c3 = new CaballoCarrera(25, "David", 19, 40.0, 1, 5, true);
-            CaballoCarrera c4 = new CaballoCarrera(25, "Duban", 25, 70.0, 6, 5, false);
-            CaballoCarrera c5 = new CaballoCarrera(25, "Victor", 7, 30.0, 8, 5, true);
-
-            session.persist(c1);
-            session.persist(c2);
-            session.persist(c3);
-            session.persist(c4);
-            session.persist(c5);
-
-            tx.commit();
-
-        } catch (Throwable ex) {
-            System.err.println("Error al crear la SessionFactory." + ex);
-            throw new ExceptionInInitializerError(ex);
         }
+
+        System.out.println("Operación exitosa");
+
     }
 
 }

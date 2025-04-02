@@ -51,15 +51,21 @@
       <dependency>
           <groupId>jakarta.validation</groupId>
           <artifactId>jakarta.validation-api</artifactId>
-          <version>3.0.0</version> <!-- Usa la última versión disponible -->
+          <version>3.0.0</version> 
       </dependency>
 
       <!-- Implementación de Bean Validation (Hibernate Validator) -->
       <dependency>
           <groupId>org.hibernate.validator</groupId>
           <artifactId>hibernate-validator</artifactId>
-          <version>7.0.0.Final</version> <!-- Usa la última versión disponible -->
+          <version>7.0.0.Final</version> 
       </dependency>
+
+      <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>jakarta.el</artifactId>
+        <version>4.0.2</version>
+		</dependency>
     </dependencies>
 
 </project>

@@ -22,7 +22,7 @@
         <!-- <property name="hibernate.default_schema">tu_usuario</property> -->
 
         <!-- Generar las tablas automáticamente -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
         <!-- none(Por defecto en Hibernate 5.2+) No realiza ninguna acción sobre el esquema.
         validate:	Comprueba que las tablas y columnas existen y coinciden con las entidades. No crea ni actualiza.
         update:	 Actualiza el esquema de la base de datos para que coincida con las entidades (añade tablas o columnas si faltan). ¡No elimina!
@@ -32,7 +32,8 @@
         create-only:	Crea el esquema al iniciar, pero no lo elimina al cerrar (Hibernate 5.5+). -->
 
         <!-- Clase mapeada -->
-        <mapping class="es.samujava.hibernate.Persona"/>
+        <mapping class="es.samujava.hibernate.entities.Persona"/>
+        <mapping class="es.samujava.hibernate.entities.CaballoCarrera"/>
 
     </session-factory>
 </hibernate-configuration>

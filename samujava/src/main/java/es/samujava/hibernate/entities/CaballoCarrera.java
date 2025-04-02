@@ -6,6 +6,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -30,8 +32,8 @@ public class CaballoCarrera {
     private int edad;
 
     @Column(name = "velocidad_maxima", nullable = false)
-    @Min(value = 30, message = "La velocidad máxima debe ser mayor o igual a 30.0 km/h.")
-    @Max(value = 80, message = "La velocidad máxima debe ser menor o igual a 80.0 km/h.")
+    @DecimalMin(value = "30.0", message = "La velocidad máxima debe ser mayor o igual a 30.0 km/h.")
+    @DecimalMax(value = "80.0", message = "La velocidad máxima debe ser menor o igual a 80.0 km/h.")
     private double velocidadMaxima;
 
     @Column(name = "numero_de_triunfos", nullable = false)
@@ -47,7 +49,7 @@ public class CaballoCarrera {
     private boolean estaActivo;
 
     // Constructores
-    public CaballoCarrera(int id, String nombre, int edad, double velocidadMaxima, int numeroDeTriunfos, double experiencia, boolean estaActivo) {
+    public CaballoCarrera(String nombre, int edad, double velocidadMaxima, int numeroDeTriunfos, double experiencia, boolean estaActivo) {
         this.nombre = nombre;
         this.edad = edad;
         this.velocidadMaxima = velocidadMaxima;
