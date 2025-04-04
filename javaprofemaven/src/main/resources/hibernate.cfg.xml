@@ -15,10 +15,11 @@
 
         <!-- Mostrar SQL por consola -->
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
 
         <!-- Crear y borrar la base de datos en cada ejecución -->
         <!-- <property name="hibernate.hbm2ddl.auto">create-drop</property> -->
-        <property name="hibernate.hbm2ddl.auto">create</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
 
         <!-- none(Por defecto en Hibernate 5.2+) No realiza ninguna acción sobre el esquema.
         validate:	Comprueba que las tablas y columnas existen y coinciden con las entidades. No crea ni actualiza.
@@ -29,6 +30,7 @@
         create-only:	Crea el esquema al iniciar, pero no lo elimina al cerrar (Hibernate 5.5+). -->
         <!-- Entidad mapeada -->
         <mapping class="es.cursojava.hibernate.Persona"/>
+        <mapping class="es.cursojava.hibernate.entities.CaballoCarrera"/>
 
     </session-factory>
 </hibernate-configuration>

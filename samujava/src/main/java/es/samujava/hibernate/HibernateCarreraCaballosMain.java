@@ -14,10 +14,10 @@ public class HibernateCarreraCaballosMain {
         Session session = HibernateUtil.getSession();
         Transaction tx = null;
         // CaballoCarrera c11 = new CaballoCarrera("Liz", 100, 30.0, 8, 5, true);
-        CaballoCarrera c14 = new CaballoCarrera("Longeva mucho", 350, 30.0, 8, 5, true);
-        CaballoCarrera c15 = new CaballoCarrera("Hola", 100, 30.0, 8, 5, true);
-        CaballoCarrera c16 = new CaballoCarrera("caballo", 4, 30.0, 8, 5, true);
-        CaballoCarrera c17 = new CaballoCarrera("mucho", 20, 30.0, 8, 5, true);
+        CaballoCarrera c14 = new CaballoCarrera("Spirit", 5, 80.0, 8, 2, true);
+        CaballoCarrera c15 = new CaballoCarrera("Joah", 20, 40.0, 3, 5, true);
+        CaballoCarrera c16 = new CaballoCarrera("Smith", 7, 70.0, 2, 1, true);
+        CaballoCarrera c17 = new CaballoCarrera("Holland", 25, 50.0, 8, 5, false);
         List<CaballoCarrera> caballos = Arrays.asList(c14, c15, c16, c17);
 
         // Obtenemos una session en hibernate

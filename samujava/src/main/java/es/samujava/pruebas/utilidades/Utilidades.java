@@ -24,5 +24,12 @@ public class Utilidades {
         double numero = scan.nextInt();
         return numero;
     }
+
+    public static boolean pideDatoBoolean(String texto) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print(texto + ": ");
+        boolean booleano = Boolean.parseBoolean(scan.nextLine());
+        return booleano;
+    }
     
 }

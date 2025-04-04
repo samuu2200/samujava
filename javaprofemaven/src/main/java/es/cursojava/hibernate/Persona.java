@@ -31,7 +31,10 @@ public class Persona {
     private String estadoCivil;
 
     // Constructores
-    public Persona() {}
+    public Persona() {
+        System.out.println("Se está creando un objeto de tipo Persona");
+    }
+    
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;

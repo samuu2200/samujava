@@ -133,3 +133,17 @@ public class CaballoCarrera {
         return sb.toString();
     }
 }
+
+
+/* 
+ * Hacer menú
+ * 1. Registrar Caballo, pedir datos de un caballo e insertarlos en la bbdd
+ * 2. Iniciar Carrera, 
+ *      ()
+ *      + Si no hay dos caballos activos no se puede iniciar
+ *      + si hay caballos o más activos se inicia la carrea
+ *      + El caballo que recorra 1000m va a ganar
+ *      
+ *      Aleatorio entre 1 y 50 + experiencia * (1-10) - edad*(1-10)
+ * 3. Salir
+ */
