@@ -1,13 +1,15 @@
 package es.samujava.hibernate.entities;
 
+import java.util.Random;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.DecimalMax;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -48,8 +50,12 @@ public class CaballoCarrera {
     @Column(name = "esta_activo", nullable = false)
     private boolean estaActivo;
 
+    @jakarta.persistence.Transient
+    private int avance;
+
     // Constructores
-    public CaballoCarrera(String nombre, int edad, double velocidadMaxima, int numeroDeTriunfos, double experiencia, boolean estaActivo) {
+    public CaballoCarrera(String nombre, int edad, double velocidadMaxima, int numeroDeTriunfos, double experiencia,
+            boolean estaActivo) {
         this.nombre = nombre;
         this.edad = edad;
         this.velocidadMaxima = velocidadMaxima;
@@ -61,8 +67,7 @@ public class CaballoCarrera {
     public CaballoCarrera() {
     }
 
-    
-    //Getters & Setters
+    // Getters & Setters
 
     public Long getId() {
         return id;
@@ -112,12 +117,20 @@ public class CaballoCarrera {
         this.experiencia = experiencia;
     }
 
-    public boolean isEstaActivo() {
+    public boolean getEstaActivo() {
         return estaActivo;
     }
 
     public void setEstaActivo(boolean estaActivo) {
         this.estaActivo = estaActivo;
+    }
+
+    public int getAvance() {
+        return avance;
+    }
+
+    public void setAvance(int avance) {
+        this.avance = avance;
     }
 
     @Override
@@ -132,18 +145,38 @@ public class CaballoCarrera {
         sb.append("¿Está activo?: ").append(estaActivo).append("\n");
         return sb.toString();
     }
+
+    public int avanceCaballos() {
+        Random random = new Random();
+    
+        // Factores basados en las características del caballo
+        double factorVelocidad = getVelocidadMaxima(); // Utilizamos la velocidad máxima del caballo
+        double factorAleatorio = random.nextDouble() * 50; // Aleatorio entre 0 y 50
+        double factorExperiencia = getExperiencia(); // La experiencia del caballo
+        double factorEdad = getEdad(); // Edad del caballo
+    
+        // Formula de avance total
+        double avanceTotal = factorVelocidad + factorAleatorio * factorExperiencia / 10 - factorEdad / 10;
+    
+        // Asegurarse de que el avance no sea negativo
+        if (avanceTotal < 0) {
+            avanceTotal = 5; // Asegurar avance mínimo de 5 unidades
+        }
+    
+        // Retornamos el avance redondeado
+        return (int) Math.round(avanceTotal);
+    }
 }
 
-
-/* 
+/*
  * Hacer menú
  * 1. Registrar Caballo, pedir datos de un caballo e insertarlos en la bbdd
- * 2. Iniciar Carrera, 
- *      ()
- *      + Si no hay dos caballos activos no se puede iniciar
- *      + si hay caballos o más activos se inicia la carrea
- *      + El caballo que recorra 1000m va a ganar
- *      
- *      Aleatorio entre 1 y 50 + experiencia * (1-10) - edad*(1-10)
+ * 2. Iniciar Carrera,
+ * ()
+ * + Si no hay dos caballos activos no se puede iniciar
+ * + si hay caballos o más activos se inicia la carrea
+ * + El caballo que recorra 1000m va a ganar
+ * 
+ * Aleatorio entre 1 y 50 + experiencia * (1-10) - edad*(1-10)
  * 3. Salir
  */
