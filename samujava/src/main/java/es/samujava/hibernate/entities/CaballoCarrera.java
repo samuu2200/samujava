@@ -150,10 +150,10 @@ public class CaballoCarrera {
         Random random = new Random();
     
         // Factores basados en las características del caballo
-        double factorVelocidad = getVelocidadMaxima(); // Utilizamos la velocidad máxima del caballo
-        double factorAleatorio = random.nextDouble() * 50; // Aleatorio entre 0 y 50
-        double factorExperiencia = getExperiencia(); // La experiencia del caballo
-        double factorEdad = getEdad(); // Edad del caballo
+        double factorVelocidad = getVelocidadMaxima();
+        double factorAleatorio = random.nextDouble() * 50;
+        double factorExperiencia = getExperiencia(); 
+        double factorEdad = getEdad(); 
     
         // Formula de avance total
         double avanceTotal = factorVelocidad + factorAleatorio * factorExperiencia / 10 - factorEdad / 10;

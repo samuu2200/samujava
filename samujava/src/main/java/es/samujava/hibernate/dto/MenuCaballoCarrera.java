@@ -14,7 +14,7 @@ import es.samujava.pruebas.utilidades.Utilidades;
 import es.samujava.utils.HibernateUtil;
 
 public class MenuCaballoCarrera {
-    private static final int salirMenu = 3;
+    private static final int salirMenu = 4;
     Session session = HibernateUtil.getSession();
     Transaction tx = null;
 
@@ -65,7 +65,7 @@ public class MenuCaballoCarrera {
                 1. Registrar caballos.
                 2. Mostrar caballos competidores.
                 3. Iniciar carrera.
-                3. Salir.%n""");
+                4. Salir.%n""");
     }
 
     // Método que crea los caballos de carrera
@@ -94,7 +94,7 @@ public class MenuCaballoCarrera {
         for (CaballoCarrera caballos : listadoCaballos) {
             insertarCaballoEnBBDD(caballos);
         }
-        System.out.println("Operación exitosa");
+        System.out.println("Operación exitosa");   
     }
 
     private void insertarCaballoEnBBDD(CaballoCarrera caballo) {
@@ -132,7 +132,7 @@ public class MenuCaballoCarrera {
     private void iniciarCarrera() {
         List<CaballoCarrera> listadoCaballos = consultarCaballos();
     
-        final int distanciaMeta = 1000;
+        final int DISTANCIA = 1000;
     
         // Verificamos si hay al menos dos caballos activos antes de iniciar la carrera
         if (listadoCaballos.size() < 2) {
@@ -153,9 +153,10 @@ public class MenuCaballoCarrera {
                 System.out.println(". Avance total: " + caballoCarrera.getAvance() + " metros.");
     
                 // Verificamos si algún caballo ha alcanzado la meta
-                if (caballoCarrera.getAvance() >= distanciaMeta) {
+                if (caballoCarrera.getAvance() >= DISTANCIA) {
                     System.out.println("\nEl caballo ganador es: " + caballoCarrera.getNombre());
                     System.out.println(caballoCarrera);
+                    caballoCarrera.setExperiencia(caballoCarrera.getExperiencia() + 1);
                     return;  
                 }
             }

@@ -34,6 +34,8 @@
         <!-- Clase mapeada -->
         <mapping class="es.samujava.hibernate.entities.Persona"/>
         <mapping class="es.samujava.hibernate.entities.CaballoCarrera"/>
+        <mapping class="es.samujava.hibernate.unoauno.Usuario"/>
+        <mapping class="es.samujava.hibernate.unoauno.Direccion"/>
 
     </session-factory>
 </hibernate-configuration>
