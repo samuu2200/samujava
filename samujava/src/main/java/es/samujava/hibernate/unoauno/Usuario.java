@@ -8,12 +8,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 /*El lado propietario de la relación es el que tiene la anotación @JoinColumn.
 mappedBy se usa en el lado no propietario, indicando el atributo en el otro lado que gestiona la relación.
 Puedes usar cascade = CascadeType.ALL para que al guardar un Usuario, se guarde también su Direccion.
 */
 @Entity
+@Table(name = "TB_USUARIOS")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

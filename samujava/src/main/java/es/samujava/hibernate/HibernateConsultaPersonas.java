@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 import es.samujava.hibernate.dto.PersonaDTO;
+import es.samujava.hibernate.entities.Persona;
 
 public class HibernateConsultaPersonas {
     public static void main(String[] args) {
