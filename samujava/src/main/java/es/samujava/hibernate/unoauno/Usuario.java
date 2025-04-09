@@ -15,7 +15,7 @@ mappedBy se usa en el lado no propietario, indicando el atributo en el otro lado
 Puedes usar cascade = CascadeType.ALL para que al guardar un Usuario, se guarde también su Direccion.
 */
 @Entity
-@Table(name = "TB_USUARIOS")
+@Table(name = "TB_USUARIO")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +23,7 @@ public class Usuario {
 
     private String nombre;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = jakarta.persistence.FetchType.LAZY)
     //@OneToOne
     @JoinColumn(name = "direccion_id") // crea la foreign key en la tabla Usuario
     private Direccion direccion;
