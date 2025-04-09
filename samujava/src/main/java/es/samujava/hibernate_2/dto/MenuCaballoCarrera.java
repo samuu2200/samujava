@@ -1,4 +1,4 @@
-package es.samujava.hibernate.dto;
+package es.samujava.hibernate_2.dto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.hibernate.resource.beans.container.internal.CdiBasedBeanContainer;
 
-import es.samujava.hibernate.entities.CaballoCarrera;
-import es.samujava.hibernate.entities.Persona;
+import es.samujava.hibernate_2.entities.CaballoCarrera;
+import es.samujava.hibernate_2.entities.Persona;
 import es.samujava.pruebas.utilidades.Utilidades;
 import es.samujava.utils.HibernateUtil;
 

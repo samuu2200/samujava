@@ -1,12 +1,14 @@
-package es.samujava.hibernate.unoauno;
+package es.samujava.hibernate_2.unoauno;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "TB_DIRECCION")
 public class Direccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

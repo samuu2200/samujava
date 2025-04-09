@@ -1,12 +1,12 @@
-package es.samujava.hibernate.unoauno;
+package es.samujava.hibernate_2.unoauno;
 
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import es.samujava.hibernate.HibernateUtil;
 import es.samujava.pruebas.utilidades.Utilidades;
+import es.samujava.utils.HibernateUtil;
 
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         
-        insertarUsuario();
+        //insertarUsuario();
         consultarUsuarios();
    
         session.close();
@@ -40,6 +40,10 @@ public class Main {
     private static void consultarUsuarios() {
         List<Usuario> usuarios = session.createQuery("from Usuario", Usuario.class)
                 .getResultList();
+
+        for (Usuario usuario : usuarios) {
+            System.out.println(usuario.getNombre() + " " + usuario.getDireccion().getCalle());
+        }
         
     }
 }

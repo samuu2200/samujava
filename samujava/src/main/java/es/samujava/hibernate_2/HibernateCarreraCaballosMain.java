@@ -1,4 +1,4 @@
-package es.samujava.hibernate;
+package es.samujava.hibernate_2;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import es.samujava.hibernate.entities.CaballoCarrera;
+import es.samujava.hibernate_2.entities.CaballoCarrera;
 import es.samujava.utils.HibernateUtil;
 
 public class HibernateCarreraCaballosMain {

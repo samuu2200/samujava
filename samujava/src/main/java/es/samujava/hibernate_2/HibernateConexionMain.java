@@ -1,8 +1,8 @@
-package es.samujava.hibernate;
+package es.samujava.hibernate_2;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.cfg.Configuration; 
 
 public class HibernateConexionMain {
     public static void main(String[] args) {

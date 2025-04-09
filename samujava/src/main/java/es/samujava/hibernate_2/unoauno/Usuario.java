@@ -1,19 +1,22 @@
-package es.samujava.hibernate.unoauno;
+package es.samujava.hibernate_2.unoauno;
 
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 /*El lado propietario de la relación es el que tiene la anotación @JoinColumn.
 mappedBy se usa en el lado no propietario, indicando el atributo en el otro lado que gestiona la relación.
 Puedes usar cascade = CascadeType.ALL para que al guardar un Usuario, se guarde también su Direccion.
 */
 @Entity
+@Table(name = "TB_USUARIO")
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +24,7 @@ public class Usuario {
 
     private String nombre;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //@OneToOne
     @JoinColumn(name = "direccion_id") // crea la foreign key en la tabla Usuario
     private Direccion direccion;

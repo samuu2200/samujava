@@ -1,4 +1,4 @@
-package es.samujava.hibernate.dto;
+package es.samujava.hibernate_2.dto;
 
 
 public class CarreraCaballosMain {

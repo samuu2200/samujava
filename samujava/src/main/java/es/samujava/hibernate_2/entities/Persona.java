@@ -1,4 +1,4 @@
-package es.samujava.hibernate.entities;
+package es.samujava.hibernate_2.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
