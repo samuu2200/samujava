@@ -36,6 +36,8 @@
         <mapping class="es.samujava.hibernate.entities.CaballoCarrera"/>
         <mapping class="es.samujava.hibernate.unoauno.Usuario"/>
         <mapping class="es.samujava.hibernate.unoauno.Direccion"/>
+        <mapping class="es.samujava.hibernate.entities.Estudiante"/>
+        <mapping class="es.samujava.hibernate.entities.CarnetBiblioteca"/>
 
     </session-factory>
 </hibernate-configuration>
