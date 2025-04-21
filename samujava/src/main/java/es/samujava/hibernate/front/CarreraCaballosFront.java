@@ -4,9 +4,10 @@ import java.util.List;
 
 import es.samujava.hibernate.dto.CaballoDTO;
 import es.samujava.hibernate.services.CarreraService;
-import es.samujava.pruebas.utilidades.Utilidades;
+import es.samujava.inicio.funciones.Utilidades;
 
 public class CarreraCaballosFront {
+
     private CarreraService servicio;
     private String nombreCarrera;
 
@@ -19,51 +20,77 @@ public class CarreraCaballosFront {
         System.out.println("Bienvenido a la carrera "+ this.nombreCarrera);
         int opcion;
         do {
-            es.samujava.inicio.funciones.Utilidades.pintaMenu(new String[]{"1. Insertar nuevo caballo ",
-                "2. Mostrar Caballos","3. Iniciar carrera","4. Salir"} , "");
-            opcion = Utilidades.pideDatoInt("Elige una opción: ");
+            Utilidades.pintaMenu(new String[]{"1. Insertar nuevo caballo ",
+                "2. Mostrar Caballos","3. Iniciar carrera",
+                "4. Borrar Caballo","5. Cambiar Jinete"
+                ,"6. Salir"} , "");
+            opcion = Utilidades.pideDatoNumerico("Elige una opción: ");
             
             switch (opcion) {
-                case 1:
-                    creaCaballo();
-                    break;
-                case 2:
-                    mostrarCaballos();
-                    break;
-                case 3:
-                    iniciarCarrera();
-                    break;
-                case 4:
-                    System.out.println("Aaaadios!");;
-                    break;
-                default:
-                    System.out.println("Opción incorrecta");
+                case 1 -> creaCaballo();
+                case 2 -> mostrarCaballos();
+                case 3 -> iniciarCarrera();
+                case 4 -> eliminarCaballo();
+                case 5 -> cambiarJinete();
+                case 6 -> System.out.println("Adiooos!");
+                default -> System.out.println("Opción incorrecta");
             }
-        } while (opcion != 4);
+        } while (opcion != 6);
 
     }
 
     private CaballoDTO creaCaballo () {
        
         String nombre = Utilidades.pideDatoCadena("Nombre: ");
-        int edad = Utilidades.pideDatoInt("edad: ");
-        double velocidad = Utilidades.pideDatoDouble("Velocidad máxima (km/h): ");
-        int triunfos = Utilidades.pideDatoInt("Número de triunfos: : ");
-        double experiencia = Utilidades.pideDatoInt("Experiencia (0.0 a 10.0): ");
+        int edad = Utilidades.pideDatoNumerico("edad: ");
+        double velocidad = Utilidades.pideDatoDecimal("Velocidad máxima (km/h): ");
+        int triunfos = Utilidades.pideDatoNumerico("Número de triunfos: : ");
+        double experiencia = Utilidades.pideDatoDecimal("Experiencia (0.0 a 10.0): ");
         String activo = Utilidades.pideDatoCadena("¿Está activo? ");
+        String nombreJinete = Utilidades.pideDatoCadena("Nombre Jinete: ");
+        String nacionalidadJinete = Utilidades.pideDatoCadena("Nacionalidad Jinete: ");
 
         CaballoDTO caballoDto = new CaballoDTO(nombre, edad, velocidad, triunfos, experiencia, 
-                activo.equalsIgnoreCase("si"));
+                activo.equalsIgnoreCase("si"), nombreJinete, nacionalidadJinete);
+
         servicio.insertarCaballo(caballoDto);
         return caballoDto;
     }
 
     private void mostrarCaballos (){
         List<CaballoDTO> caballos = servicio.obtenerCaballos(false);
-        caballos.forEach(System.out::println);
+        for (CaballoDTO caballoDTO : caballos) {
+            System.out.println(caballoDTO.getNombre());
+            System.out.println(caballoDTO.getNombreJinete());
+        }
+        //caballos.forEach(System.out::println);
     }
 
     private  void iniciarCarrera (){
         servicio.simularCarrera(servicio.obtenerCaballos(true));
+    }
+
+    private void eliminarCaballo (){
+        //mostrarCaballos();
+        int id = Utilidades.pideDatoNumerico("Introduce el id del caballo a eliminar");
+        servicio.eliminarCaballo(id);
+        System.out.println("Caballo con id "+id + " borrado");
+    }
+
+    private void cambiarJinete(){
+        long idCaballo = Utilidades.pideDatoNumerico("Introduce id caballo a actualizar su Jinete");
+
+        
+        CaballoDTO caballoDTO = servicio.obtenerJineteCaballo(idCaballo);
+        System.out.println("El jinete actual es: ");
+        System.out.println("\t"+caballoDTO.getNombreJinete());
+        System.out.println("\t"+caballoDTO.getNacionalidadJinete());
+
+        String nombreJinete = Utilidades.pideDatoCadena("Nombre Jinete: ");
+        String nacionalidadJinete = Utilidades.pideDatoCadena("Nacionalidad Jinete: ");
+        caballoDTO.setNombreJinete(nombreJinete);
+        caballoDTO.setNacionalidadJinete(nacionalidadJinete);
+
+        servicio.actualizarJineteCaballo(idCaballo, caballoDTO);
     }
 }

@@ -9,7 +9,7 @@
         <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
         <property name="hibernate.connection.url">jdbc:oracle:thin:samuu/password@localhost:1522:XE</property>
         <property name="hibernate.connection.username">samuu</property>
-        <property name="hibernate.connection.password">password  </property>
+        <property name="hibernate.connection.password">password</property>
 
         <!-- Dialecto de Hibernate para Oracle -->
         <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
@@ -34,6 +34,7 @@
         <!-- Clase mapeada -->
         <mapping class="es.samujava.hibernate.entities.Persona"/>
         <mapping class="es.samujava.hibernate.entities.CaballoCarrera"/>
+        <mapping class="es.samujava.hibernate.entities.Jinete"/>
         <mapping class="es.samujava.hibernate.unoauno.Usuario"/>
         <mapping class="es.samujava.hibernate.unoauno.Direccion"/>
         <mapping class="es.samujava.hibernate.entities.Estudiante"/>

@@ -1,5 +1,8 @@
 package es.samujava.inicio.funciones;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Utilidades {
@@ -65,6 +68,27 @@ public class Utilidades {
 		}
 		System.out.println(texto);
 	}
+
+    public static Date pideDatoDate(String mensaje) {
+        Scanner scan = new Scanner(System.in);
+        String pattern = "dd-MM-yy"; // Formato de la fecha
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+        sdf.setLenient(false); // Evita que fechas inválidas como 32-01-23 se acepten
+        Date fecha = null;
+
+        while (fecha == null) {
+            System.out.println(mensaje);
+            String input = scan.nextLine();
+
+            try {
+                fecha = sdf.parse(input); // Intenta convertir la cadena a Date
+            } catch (ParseException e) {
+                System.out.println("Formato de fecha incorrecto. Intenta nuevamente. (Ejemplo: 25-12-24)");
+            }
+        }
+
+        return fecha; // Devuelve la fecha válida
+    }
 	
 }
 
