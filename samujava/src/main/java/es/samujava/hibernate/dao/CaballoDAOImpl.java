@@ -24,12 +24,25 @@ public class CaballoDAOImpl implements CaballoDAO {
         Session session = HibernateUtil.getSession();
         CaballoCarrera cc = session.find(CaballoCarrera.class, id);
         return cc;
+        
+    }
+
+    @Override
+    public List<CaballoCarrera> buscarJinetePorNacionalidad(String nacionalidad) {
+        Session session = HibernateUtil.getSession();
+        String queryJinetePorNacionalidad = "from CaballoCarrera cc where cc.jinete.nacionalidad =: param1";   
+        Query<CaballoCarrera> query = session.createQuery(queryJinetePorNacionalidad, CaballoCarrera.class);
+        query.setParameter("param1", nacionalidad);
+        
+        
+        List<CaballoCarrera> lista = query.list();
+        return lista;
     }
 
     @Override
     public CaballoDTO obtenerJinete(long caballoId) {
         Session session = HibernateUtil.getSession();
-        String queryJinete = "select es.samujava.hibernate.dtoCaballoDTO(cc.Jinete.nombre, cc.Jinete.nacionalidad) from CaballoCarrera cc where id =: param1";
+        String queryJinete = "select es.samujava.hibernate.dtoCaballoDTO(cc.jinete.nombre, cc.jinete.nacionalidad) from CaballoCarrera cc where id =: param1";
 
         Query<CaballoDTO> query = session.createQuery(queryJinete, CaballoDTO.class);
         query.setParameter("param1", caballoId);

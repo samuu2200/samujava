@@ -19,6 +19,12 @@ public class CaballoDAOJDBCImpl implements CaballoDAO{
     }
 
     @Override
+    public List<CaballoCarrera> buscarJinetePorNacionalidad(String nacionalidad) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
     public CaballoDTO obtenerJinete(long caballoId) {
         // TODO Auto-generated method stub
         return null;

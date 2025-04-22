@@ -3,6 +3,7 @@ package es.samujava.hibernate.front;
 import java.util.List;
 
 import es.samujava.hibernate.dto.CaballoDTO;
+import es.samujava.hibernate.entities.CaballoCarrera;
 import es.samujava.hibernate.services.CarreraService;
 import es.samujava.inicio.funciones.Utilidades;
 
@@ -20,10 +21,15 @@ public class CarreraCaballosFront {
         System.out.println("Bienvenido a la carrera "+ this.nombreCarrera);
         int opcion;
         do {
-            Utilidades.pintaMenu(new String[]{"1. Insertar nuevo caballo ",
-                "2. Mostrar Caballos","3. Iniciar carrera",
-                "4. Borrar Caballo","5. Cambiar Jinete"
-                ,"6. Salir"} , "");
+            Utilidades.pintaMenu(new String[]{
+                "1. Insertar nuevo caballo ",
+                "2. Mostrar Caballos",
+                "3. Iniciar carrera",
+                "4. Borrar Caballo",
+                "5. Cambiar Jinete", 
+                "6. Buscar jinete por nacionalidad",
+                "7. Salir"
+            }, "");
             opcion = Utilidades.pideDatoNumerico("Elige una opción: ");
             
             switch (opcion) {
@@ -32,7 +38,8 @@ public class CarreraCaballosFront {
                 case 3 -> iniciarCarrera();
                 case 4 -> eliminarCaballo();
                 case 5 -> cambiarJinete();
-                case 6 -> System.out.println("Adiooos!");
+                case 6 -> buscarJinetePorNacionalidad();
+                case 7 -> System.out.println("Adiooos!");
                 default -> System.out.println("Opción incorrecta");
             }
         } while (opcion != 6);
@@ -59,11 +66,7 @@ public class CarreraCaballosFront {
 
     private void mostrarCaballos (){
         List<CaballoDTO> caballos = servicio.obtenerCaballos(false);
-        for (CaballoDTO caballoDTO : caballos) {
-            System.out.println(caballoDTO.getNombre());
-            System.out.println(caballoDTO.getNombreJinete());
-        }
-        //caballos.forEach(System.out::println);
+        caballos.forEach(System.out::println);
     }
 
     private  void iniciarCarrera (){
@@ -92,5 +95,19 @@ public class CarreraCaballosFront {
         caballoDTO.setNacionalidadJinete(nacionalidadJinete);
 
         servicio.actualizarJineteCaballo(idCaballo, caballoDTO);
+    }
+
+    private void buscarJinetePorNacionalidad() {
+        String nacionalidad = Utilidades.pideDatoCadena("Nacionalidad jinete: ");
+        List<CaballoCarrera> caballos = servicio.buscarJinetePorNacionalidad(nacionalidad);
+        System.out.println("Jinetes econtrados con la nacionalidad " + nacionalidad);
+        for (CaballoCarrera caballoCarrera : caballos) {
+            if (caballoCarrera.getJinete().getNacionalidad().equalsIgnoreCase(nacionalidad)) 
+                System.out.println(caballoCarrera);
+            else 
+                System.out.println("No se ha encontrado resultados");
+
+        }
+        caballos.forEach(System.out::println);
     }
 }

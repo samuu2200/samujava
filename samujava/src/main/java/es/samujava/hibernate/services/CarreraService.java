@@ -34,14 +34,17 @@ public class CarreraService {
         return dao.obtenerJinete(idCaballo);
     }
     
+    public List<CaballoCarrera> buscarJinetePorNacionalidad(String nacionalidad) {
+        return dao.buscarJinetePorNacionalidad(nacionalidad);
+    }
 
     public List<CaballoDTO> obtenerCaballos(boolean activos) {
         List<CaballoCarrera> caballos = null;
-        if (!activos) {
+        if (!activos) 
             caballos = dao.obtenerTodos();
-        } else {
+        else 
             caballos = dao.obtenerActivos();
-        }
+        
 
         return generaDTO(caballos);
     }

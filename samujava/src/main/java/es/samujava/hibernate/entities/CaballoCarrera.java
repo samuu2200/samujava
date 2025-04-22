@@ -144,11 +144,17 @@ public class CaballoCarrera {
 		this.jinete = jinete;
 	}
 
-	@Override
-	public String toString() {
-		return "CaballoCarrera [id=" + id + ", nombre=" + nombre + ", edad=" + edad + ", velocidadMaxima="
-				+ velocidadMaxima + ", numeroTriunfos=" + numeroTriunfos + ", experiencia=" + experiencia
-				+ ", estaActivo=" + estaActivo + "]";
-	}
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n***Datos del caballo***");
+        sb.append("\tNombre caballo: ").append(nombre).append("\n");
+        sb.append("\tEdad caballo: ").append(edad).append("\n");
+        sb.append("\tVelocidad caballo: ").append(velocidadMaxima).append("\n");
+        sb.append("\tTriunfos caballo: ").append(numeroTriunfos).append("\n");
+        sb.append("\tExperiencia caballo: ").append(experiencia).append("\n");
+        sb.append("\tActivo caballo: ").append(estaActivo).append("\n");
+        return sb.toString();
+    }
 
 }

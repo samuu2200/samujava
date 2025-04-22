@@ -97,8 +97,15 @@ public class CaballoDTO {
 
     @Override
     public String toString() {
-        return nombre + " | Edad: " + edad + ", Velocidad: " + velocidadMaxima +
-                " km/h, Triunfos: " + numeroDeTriunfos + ", Exp: " + experiencia
-                + ", activo: " + activo;
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n***Datos del caballo***");
+        sb.append("\tNombre caballo: ").append(nombre).append("\n");
+        sb.append("\tNombre jinete: ").append(getNombreJinete()).append("\n");
+        sb.append("\tEdad caballo: ").append(edad).append("\n");
+        sb.append("\tVelocidad caballo: ").append(velocidadMaxima).append("\n");
+        sb.append("\tTriunfos caballo: ").append(numeroDeTriunfos).append("\n");
+        sb.append("\tExperiencia caballo: ").append(experiencia).append("\n");
+        sb.append("\tActivo caballo: ").append(activo).append("\n");
+        return sb.toString();
     }
 }
