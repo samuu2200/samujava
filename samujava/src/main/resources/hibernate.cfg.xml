@@ -39,6 +39,9 @@
         <mapping class="es.samujava.hibernate.unoauno.Direccion"/>
         <mapping class="es.samujava.hibernate.entities.Estudiante"/>
         <mapping class="es.samujava.hibernate.entities.CarnetBiblioteca"/>
+        <mapping class="es.samujava.hibernate.entities.Cliente"/>
+        <mapping class="es.samujava.hibernate.entities.Autor"/>
+        <mapping class="es.samujava.hibernate.entities.Book"/>
 
     </session-factory>
 </hibernate-configuration>
