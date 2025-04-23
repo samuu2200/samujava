@@ -2,6 +2,7 @@ package es.samujava.inicio.funciones;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -69,25 +70,24 @@ public class Utilidades {
 		System.out.println(texto);
 	}
 
-    public static Date pideDatoDate(String mensaje) {
-        Scanner scan = new Scanner(System.in);
-        String pattern = "dd-MM-yy"; // Formato de la fecha
-        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-        sdf.setLenient(false); // Evita que fechas inválidas como 32-01-23 se acepten
-        Date fecha = null;
+    // Crea una fecha a partir de año, mes y día
+    public static Date crearFecha(int año, int mes, int dia) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, año);
+        calendar.set(Calendar.MONTH, mes - 1); // Enero es 0
+        calendar.set(Calendar.DAY_OF_MONTH, dia);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTime();
+    }
 
-        while (fecha == null) {
-            System.out.println(mensaje);
-            String input = scan.nextLine();
-
-            try {
-                fecha = sdf.parse(input); // Intenta convertir la cadena a Date
-            } catch (ParseException e) {
-                System.out.println("Formato de fecha incorrecto. Intenta nuevamente. (Ejemplo: 25-12-24)");
-            }
-        }
-
-        return fecha; // Devuelve la fecha válida
+    // Formatea una fecha en formato dd/MM/yyyy
+    public static String formatearFecha(Date fecha) {
+        if (fecha == null) return "";
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        return formato.format(fecha);
     }
 	
 }
