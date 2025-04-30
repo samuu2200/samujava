@@ -1,6 +1,5 @@
 package es.samujava.inicio.funciones;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -68,6 +67,13 @@ public class Utilidades {
 			System.out.println(opcion);
 		}
 		System.out.println(texto);
+	}
+	public static Date fechas(String mensaje) {
+		System.out.println(mensaje);
+		Date fecha = crearFecha(0, 0, 0);
+
+		return fecha;
+		
 	}
 
     // Crea una fecha a partir de año, mes y día
